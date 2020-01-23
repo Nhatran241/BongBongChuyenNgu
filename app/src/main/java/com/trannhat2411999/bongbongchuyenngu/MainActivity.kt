@@ -18,8 +18,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         mediaProjectionManager = getSystemService(Service.MEDIA_PROJECTION_SERVICE) as MediaProjectionManager
-        startActivityForResult(mediaProjectionManager.createScreenCaptureIntent(), REQUEST_CAPTURE)
-        //checkChatHeadPermission()
+        checkChatHeadPermission()
     }
 
     companion object {
@@ -33,10 +32,15 @@ class MainActivity : AppCompatActivity() {
                 projection = mediaProjectionManager.getMediaProjection(resultCode, data!!)
                 val intent = Intent(this, BongBongService::class.java)
                     .setAction(CaptureService.ACTION_ENABLE_CAPTURE)
-                startService(intent)
+                startForegroundService(intent)
             } else {
                 projection = null
                 Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show()
+            }
+        }else if (requestCode == 21){
+            if (resultCode == RESULT_OK) {
+
+                startActivityForResult(mediaProjectionManager.createScreenCaptureIntent(), REQUEST_CAPTURE)
             }
         }
         finish()
@@ -53,9 +57,8 @@ class MainActivity : AppCompatActivity() {
             )
             startActivityForResult(intent, 21)
         }else {
-            val intent = Intent(this, BongBongService::class.java)
-            startService(intent)
-            finish()
+
+            startActivityForResult(mediaProjectionManager.createScreenCaptureIntent(), REQUEST_CAPTURE)
         }
     }
 
