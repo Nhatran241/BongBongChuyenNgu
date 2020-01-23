@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+
+    card_view:cardCornerRadius="@dimen/dp20"
+    android:layout_height="wrap_content"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:background="@drawable/translatebox"
+        android:layout_width="@dimen/dp350"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:id="@+id/rl_top"
+            android:background="#00B0FF"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp40">
+
+            <Spinner
+                android:layout_centerHorizontal="true"
+                android:id="@+id/sp_source"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <Spinner
+                android:id="@+id/sp_target"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:id="@+id/btn_close"
+                android:layout_margin="@dimen/dp5"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/ic_stop"
+                android:layout_width="@dimen/dp30"
+                android:layout_height="@dimen/dp30"/>
+        </RelativeLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_below="@+id/rl_top"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp200">
+            <EditText
+                android:lines="1"
+                android:layout_weight="1"
+                android:id="@+id/ed_input_source"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp100"/>
+            <RelativeLayout
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp100">
+                <EditText
+                    android:layout_alignParentBottom="true"
+                    android:layout_toLeftOf="@id/btn_tranlate"
+                    android:id="@+id/ed_inputtarget"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <Button
+                    android:layout_alignParentBottom="true"
+                    android:id="@+id/btn_tranlate"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/ic_translate"
+                    android:layout_width="@dimen/dp30"
+                    android:layout_height="@dimen/dp30"/>
+
+                <Button
+                    android:id="@+id/btn_screentranlate"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/ic_screenshot"
+                    android:layout_width="@dimen/dp30"
+                    android:layout_height="@dimen/dp30"/>
+            </RelativeLayout>
+        </LinearLayout>
+
+
+
+
+
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView android:background="@color/white"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+
+    card_view:cardCornerRadius="@dimen/dp20"
+    android:layout_height="wrap_content"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="@dimen/dp350"
+        android:layout_height="500dp">
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_stop"
+            android:layout_width="@dimen/dp20"
+            android:layout_height="@dimen/dp20"/>
+
+        <EditText
+            android:focusable="true"
+            android:layout_below="@id/btn_dich"
+            android:id="@+id/ed_input"
+            android:hint="Enter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/tv_kq"
+            android:layout_centerHorizontal="true"
+            android:text="Ket Qua"
+            android:layout_below="@+id/ed_input"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/btn_dich"
+            android:layout_centerInParent="true"
+            android:text="Dịch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+        <Button
+            android:layout_above="@id/btn_dich"
+            android:id="@+id/btn_dichcamera"
+            android:layout_centerInParent="true"
+            android:text="Dịch Camera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
